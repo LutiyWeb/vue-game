@@ -16,6 +16,7 @@
         isProgres: item.isProgres === 'isProgres',
         isFalse: item.isProgres === 'isFalse',
         isTrue: item.isProgres === 'isTrue',
+        isCorrect: item.correctUnswere,
       }"
       @click="checkQuestion(item)">
       <div class="unswers__item-position">
@@ -334,11 +335,23 @@ export default {
             } else {
               item.current = true;
             }
+
+            item.unswers.forEach((item) => {
+              if (item.value) {
+                item.correctUnswere = true;
+              }
+            });
           });
+
           item.isProgres = "isFalse";
           setTimeout(() => {
             this.changeStep(0);
             delete item.isProgres;
+            this.questionList.forEach((item) => {
+              item.unswers.forEach((item) => {
+                delete item.correctUnswere;
+              });
+            });
           }, 10000);
         }
         this.$emit("getUnswere", item);

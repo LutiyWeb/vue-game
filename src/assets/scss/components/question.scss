@@ -50,7 +50,7 @@
   }
 
   &.isProgres {
-    animation: fadeInUp 10s;
+    animation: fadeInUp 5s infinite;
   }
 
   &.isFalse {
@@ -71,6 +71,11 @@
                     rgba(155, 148, 233, 1) 100%
     );
   }
+
+  &.isCorrect {
+    background: #3ded97 ;
+    animation: pulse 5s infinite;
+  }
   &-text {
     font-size: 18px;
   }
@@ -78,6 +83,28 @@
     font-weight: 700;
     margin-right: 15px;
     text-transform: uppercase;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.5;
+  }
+
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

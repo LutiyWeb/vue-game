@@ -12,11 +12,5 @@ export default createStore({
     changeStep(state, step) {
       state.currentStep = step;
     },
-
-    // togglePopup(state, progres) {
-    //   if (progres === true) {
-    //     state.isProgres = true;
-    //   }
-    // },
   },
 });
