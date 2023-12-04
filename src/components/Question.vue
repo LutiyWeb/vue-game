@@ -1,10 +1,10 @@
-<!-- eslint-disable prettier/prettier -->
 <template>
   <div
     class="question"
     v-for="item in questionList"
     :key="item.id"
-    :class="{ current: item.current }">
+    :class="{ current: item.current }"
+  >
     {{ item.text }}
   </div>
   <ul class="unswers">
@@ -17,7 +17,8 @@
         isFalse: item.isProgres === 'isFalse',
         isTrue: item.isProgres === 'isTrue',
       }"
-      @click="checkQuestion(item)">
+      @click="checkQuestion(item)"
+    >
       <div class="unswers__item-position">
         {{ item.position }}
       </div>
