@@ -1,7 +1,13 @@
 <template>
   <div class="progress">
     <div class="progress__inner">
-      <ProggresList />
+      <button class="progress__trigger" @click="progrressListState = true">
+        <img src="@/assets/image/progress.svg" alt="" />
+      </button>
+      <ProggresList
+        :progressState="progrressListState"
+        @changeProgressState="changeProgressState"
+      />
       <div class="progress__bar">
         <span :style="{ maxHeight: changeProgresBar }"></span>
       </div>
@@ -24,7 +30,15 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      progrressListState: false,
+    };
+  },
+
+  methods: {
+    changeProgressState() {
+      this.progrressListState = false;
+    },
   },
 
   computed: {

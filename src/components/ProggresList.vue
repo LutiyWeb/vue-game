@@ -1,11 +1,13 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <ul class="progress__list">
+  <ul class="progress__list" :class="{active: progressState}">
     <ProggresListItem
       v-for="(step, index) in progresItems"
       :key="step.id"
       :step_data="step"
       :class="{ current: index === currentStep  }" />
+    <button class="progress__list-close" @click="closeListFunction">+</button>
+
   </ul>
 </template>
 
@@ -16,6 +18,13 @@ export default {
   name: "ProgressList",
   components: {
     ProggresListItem,
+  },
+
+  props: {
+    progressState: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -83,6 +92,12 @@ export default {
         },
       ],
     };
+  },
+
+  methods: {
+    closeListFunction() {
+      this.$emit("changeProgressState");
+    },
   },
 
   computed: {
