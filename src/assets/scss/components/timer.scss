@@ -1,0 +1,19 @@
+.timer {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  width: 200px;
+  padding: 10px 0;
+  display: grid;
+  place-content: center;
+  font-size: 40px;
+  border-radius: 15px;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #171921, #171921) padding-box, linear-gradient(135deg, #fd035f, #262f67) border-box;
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+    width: 150px;
+    top: 42px;
+  }
+}

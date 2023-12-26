@@ -1,0 +1,14 @@
+.result {
+  width: fit-content;
+  height: 50px;
+  display: grid;
+  place-content: center;
+  font-size: 25px;
+  margin-left: 15px;
+
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    right: 15px;
+    top: 99px;
+  }
+}

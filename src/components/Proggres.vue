@@ -1,18 +1,40 @@
 <template>
   <div class="progress">
-    <ProggresControls />
-    <ProggresList />
+    <div class="progress__inner">
+      <ProggresList />
+      <div class="progress__bar">
+        <span :style="{ maxHeight: changeProgresBar }"></span>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import ProggresControls from "@/components/ProggresControls.vue";
 import ProggresList from "@/components/ProggresList.vue";
+import { mapState } from "vuex";
 export default {
   name: "Progress",
   components: {
-    ProggresControls,
     ProggresList,
+  },
+  props: {
+    nextStep: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {};
+  },
+
+  computed: {
+    ...mapState({
+      currentStep: (state) => state.currentStep,
+    }),
+
+    changeProgresBar() {
+      return `${(this.currentStep + 1) * 8.33}%`;
+    },
   },
 };
 </script>

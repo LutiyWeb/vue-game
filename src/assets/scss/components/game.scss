@@ -1,5 +1,6 @@
 .game {
-  padding-top: 100px;
+  padding-top: 20px;
+  padding-bottom: 8px;
 }
 .game-img {
   position: relative;
@@ -41,6 +42,16 @@
   border: 2px solid transparent;
   background: linear-gradient(0deg, #070e3e, #262f67) padding-box,
   linear-gradient(135deg, #fd035f, #6c2c8c) border-box;
+
+  @media screen and (max-width: 1024px) {
+    padding: 8px;
+    min-height: 50px;
+    width: 240px;
+    left: -15%;
+  }
+  @media screen and (max-width: 768px) {
+    top: -33px;
+  }
 }
 .game__container {
   display: flex;
@@ -51,7 +62,33 @@
   flex: 0 1 100%;
 }
 
-.progress {
-  min-width: 250px;
-  text-align: center;
+
+.bg {
+  animation:slide 14s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #070e3e 50%, #262f67 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:22s;
+}
+
+.bg3 {
+  animation-duration:22s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
 }

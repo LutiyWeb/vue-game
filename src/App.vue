@@ -72,11 +72,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-bottom: 50px;
+  overflow: hidden;
 }
 
 .app {
-  height: 100vh;
+  @media screen and (min-width: 768px) {
+    height: 100vh;
+  }
 }
 
 nav,

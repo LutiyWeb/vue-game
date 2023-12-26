@@ -1,6 +1,6 @@
 .question {
   padding: 5px 10px;
-  font-size: 24px;
+  font-size: 22px;
   border: 1px solid #eee;
   border-radius: 4px;
   margin-bottom: 15px;
@@ -9,6 +9,10 @@
   background: linear-gradient(45deg, #070e3e, #6c2c8c) padding-box,
   linear-gradient(135deg, #fd035f, #262f67) border-box;
   display: none;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 18px;
+  }
 
   &.current {
     display: block;
@@ -23,7 +27,6 @@
 
 .unswers__item {
   padding: 5px 10px;
-  font-size: 18px;
   border-radius: 4px;
   text-align: center;
   cursor: pointer;
@@ -72,7 +75,11 @@
     );
   }
   &-text {
-    font-size: 18px;
+    font-size: 16px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+    }
   }
   &-position {
     font-weight: 700;

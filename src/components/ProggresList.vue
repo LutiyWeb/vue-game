@@ -5,7 +5,7 @@
       v-for="(step, index) in progresItems"
       :key="step.id"
       :step_data="step"
-      :class="{ current: index === count  }" />
+      :class="{ current: index === currentStep  }" />
   </ul>
 </template>
 
@@ -61,13 +61,33 @@ export default {
           id: 8,
           reward: 16000,
         },
+        {
+          step: "step 9",
+          id: 9,
+          reward: 4000,
+        },
+        {
+          step: "step 10",
+          id: 10,
+          reward: 8000,
+        },
+        {
+          step: "step 11",
+          id: 11,
+          reward: 16000,
+        },
+        {
+          step: "step 12",
+          id: 12,
+          reward: 4000,
+        },
       ],
     };
   },
 
   computed: {
     ...mapState({
-      count: (state) => state.currentStep,
+      currentStep: (state) => state.currentStep,
     }),
   },
 };
