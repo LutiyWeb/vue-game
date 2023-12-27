@@ -456,27 +456,29 @@ export default {
         if (item.value) {
           item.isProgres = "isTrue";
           setTimeout(() => {
-            this.questionList[index].current = false;
-            this.questionList[index + 1].current = true;
-            this.changeStep(index + 1);
             this.$emit("nextStep");
             this.$emit("checkTheUnswer", { item, reset: false });
           }, 3000);
         } else {
-          this.questionList.forEach((item, index) => {
-            if (index > 0) {
-              item.current = false;
-            } else {
-              item.current = true;
-            }
-          });
+          // this.questionList.forEach((item, index) => {
+          //   if (index > 0) {
+          //     item.current = false;
+          //   } else {
+          //     item.current = true;
+          //   }
+          // });
           item.isProgres = "isFalse";
           setTimeout(() => {
             this.$emit("checkTheUnswer", { item, reset: false });
             delete item.isProgres;
-            this.changeStep(index + 1);
           }, 3000);
         }
+        setTimeout(() => {
+          this.changeStep(index + 1);
+          this.questionList[index].current = false;
+          this.questionList[index + 1].current = true;
+        }, 3000);
+
         this.$emit("getUnswere", item);
       }, 3000);
     },

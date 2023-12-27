@@ -109,7 +109,7 @@ export default {
     },
 
     failUnswere() {
-      if (this.userPoint > 0) {
+      if (this.userPoint >= 0) {
         this.userPoint -= 10;
       }
     },

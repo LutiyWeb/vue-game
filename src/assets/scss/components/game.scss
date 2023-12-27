@@ -14,6 +14,10 @@
   background: linear-gradient(0deg, #070e3e, #262f67) padding-box,
   linear-gradient(135deg, #fd035f, #6c2c8c) border-box;
 
+  @media screen and (max-width: 768px) {
+    height: 324px;
+  }
+
   img {
     position: absolute;
     top: 0;

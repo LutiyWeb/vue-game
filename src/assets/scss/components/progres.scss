@@ -34,7 +34,6 @@
       bottom: -8px;
       align-items: center;
       padding: 10px 0;
-      //background-color: rgba(9, 16, 64, .7);
       border: 2px solid transparent;
       background: linear-gradient(45deg, #171921, #171921) padding-box, linear-gradient(135deg, #fd035f, #262f67) border-box;
       padding: 15px 22px;
@@ -54,12 +53,16 @@
       background: #171921;
       border: 2px solid #e73c7e;
       border-radius: 50%;
-      display: grid;
-      place-content: center;
       margin-bottom: 8px;
       position: absolute;
       top: 10px;
       left: 55px;
+      display: none;
+
+      @media screen and (max-width: 768px) {
+        display: grid;
+        place-content: center;
+      }
 
     }
   }
@@ -68,6 +71,11 @@
     height: 33px;
     width: 33px;
     animation: pulse 3s ease infinite;
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
   }
 
   .progres-item {
